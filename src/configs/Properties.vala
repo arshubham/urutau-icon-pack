@@ -23,7 +23,5 @@ namespace PapirusIconPack.Configs {
 
     public class Properties {
 
-        public abstract const string TITLE_HEADER_BAR = "PapirusIconPack";
-
     }
 }

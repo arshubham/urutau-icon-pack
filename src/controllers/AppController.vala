@@ -19,7 +19,6 @@
  * Authored by: Shubham Arora <shubhamarora@protonmail.com>
  */
 
-using PapirusIconPack.Widgets;
 using PapirusIconPack.Views;
 
 namespace PapirusIconPack.Controllers {

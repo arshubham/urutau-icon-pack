@@ -7,8 +7,10 @@ sources = files(
     'controllers/AppController.vala',
 
     'views/AppView.vala',
-
-    'widgets/HeaderBar.vala',
+    'views/HomeView.vala',
+    'views/IconView.vala',
+    'views/IconRequestView.vala',
+    'views/FaqView.vala',
 
     'Application.vala',
     'Main.vala',

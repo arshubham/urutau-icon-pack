@@ -24,10 +24,17 @@ namespace PapirusIconPack.Widgets {
 
     public class HeaderBar : Gtk.HeaderBar {
 
+        public Granite.Widgets.ModeButton view_mode;
+
         public HeaderBar () {
 
-            this.set_title (Properties.TITLE_HEADER_BAR);
             this.show_close_button = true;
         }
+
+         construct {
+
+            build_mode_buttons ();
+
+
     }
 }

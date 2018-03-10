@@ -33,7 +33,7 @@ namespace PapirusIconPack {
                 application: app,
                 icon_name: Constants.APP_ICON,
                 deletable: true,
-                resizable: true
+                resizable: false
             );
 
             // var settings = PapirusIconPack.Configs.Settings.get_instance ();
