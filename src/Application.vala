@@ -18,9 +18,9 @@
  *
  * Authored by: Shubham Arora <shubhamarora@protonmail.com>
  */
-using PapirusIconPack.Configs;
+using IconPack.Configs;
 
-namespace PapirusIconPack {
+namespace IconPack {
 
     public class Application : Granite.Application {
 

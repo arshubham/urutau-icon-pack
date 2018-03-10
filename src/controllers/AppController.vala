@@ -19,9 +19,9 @@
  * Authored by: Shubham Arora <shubhamarora@protonmail.com>
  */
 
-using PapirusIconPack.Views;
+using IconPack.Views;
 
-namespace PapirusIconPack.Controllers {
+namespace IconPack.Controllers {
     public class AppController {
 
         private Gtk.Application application;

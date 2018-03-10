@@ -19,19 +19,19 @@
  * Authored by: Shubham Arora <shubhamarora@protonmail.com>
  */
 
-using PapirusIconPack.Configs;
+using IconPack.Configs;
 
-namespace PapirusIconPack.Views {
+namespace IconPack.Views {
 
     public class AppView : Gtk.Grid {
 
         private Gtk.ApplicationWindow app;
         private Gtk.HeaderBar headerbar;
         private Granite.Widgets.ModeButton view_mode;
-        private PapirusIconPack.Views.HomeView home_view;
-        private PapirusIconPack.Views.IconView icon_view;
-        private PapirusIconPack.Views.IconRequestView icon_request_view;
-        private PapirusIconPack.Views.FaqView faq_view;
+        private IconPack.Views.HomeView home_view;
+        private IconPack.Views.IconView icon_view;
+        private IconPack.Views.IconRequestView icon_request_view;
+        private IconPack.Views.FaqView faq_view;
         private Gtk.Stack content;
 
         construct {
@@ -96,6 +96,10 @@ namespace PapirusIconPack.Views {
 
         private void build_views () {
             content = new Gtk.Stack ();
+            content.transition_type = Gtk.StackTransitionType.OVER_LEFT_RIGHT;
+            content.transition_duration = 500;
+            content.hhomogeneous = true;
+            content.vhomogeneous = true;
             home_view = new HomeView ();
             icon_view = new IconView ();
             icon_request_view = new IconRequestView ();

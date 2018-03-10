@@ -19,7 +19,7 @@
  * Authored by: Shubham Arora <shubhamarora@protonmail.com>
  */
 
-namespace PapirusIconPack.Configs {
+namespace IconPack.Configs {
 
     public class Properties {
 

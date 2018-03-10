@@ -19,11 +19,11 @@
  * Authored by: Shubham Arora <shubhamarora@protonmail.com>
  */
 
-using PapirusIconPack.Configs;
-using PapirusIconPack.Controllers;
-using PapirusIconPack.Views;
+using IconPack.Configs;
+using IconPack.Controllers;
+using IconPack.Views;
 
-namespace PapirusIconPack {
+namespace IconPack {
 
     public class Window : Gtk.ApplicationWindow {
 

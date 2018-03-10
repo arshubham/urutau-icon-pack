@@ -21,6 +21,6 @@
 
 public static void main (string [] args) {
 
-    var app = new PapirusIconPack.Application ();
+    var app = new IconPack.Application ();
     app.run (args);
 }
