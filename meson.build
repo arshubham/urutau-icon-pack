@@ -1,4 +1,4 @@
-project('com.github.arshubham.papirus-icon-pack', ['vala', 'c'],
+project('com.github.arshubham.urutau-icon-pack', ['vala', 'c'],
     version : '0.1.0',
     license: 'GPL-3.0'
 )
@@ -18,7 +18,7 @@ c_args = [
 
 subdir('src')
 
-executable('com.github.arshubham.papirus-icon-pack',
+executable('com.github.arshubham.urutau-icon-pack',
     sources,
     c_args: c_args,
     dependencies :[

@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2018 Shubham Arora (https://github.com/arshubham/papirus-icon-pack)
+ * Copyright (c) 2018 Shubham Arora (https://github.com/arshubham/urutau-icon-pack)
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -31,9 +31,7 @@ namespace IconPack {
 
             Object (
                 application: app,
-                icon_name: Constants.APP_ICON,
-                deletable: true,
-                resizable: false
+                icon_name: Constants.APP_ICON
             );
 
             // var settings = PapirusIconPack.Configs.Settings.get_instance ();

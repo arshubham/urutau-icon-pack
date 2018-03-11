@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2018 Shubham Arora (https://github.com/arshubham/papirus-icon-pack)
+ * Copyright (c) 2018 Shubham Arora (https://github.com/arshubham/urutau-icon-pack)
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -23,17 +23,17 @@ namespace IconPack.Configs {
 
     public class Constants {
 
-        public abstract const string ID = "com.github.arshubham.papirus-icon-pack";
+        public abstract const string ID = "com.github.arshubham.urutau-icon-pack";
         public abstract const string VERSION = "0.1.0";
         public abstract const string PROGRAME_NAME = "Papirus Icon Pack";
         public abstract const string APP_YEARS = "2018";
-        public abstract const string APP_ICON = "com.github.arshubham.papirus-icon-pack";
+        public abstract const string APP_ICON = "com.github.arshubham.urutau-icon-pack";
         public abstract const string ABOUT_COMMENTS = "Papirus Icon theme installer";
         public abstract const string TRANSLATOR_CREDITS = "Github Translators";
-        public abstract const string MAIN_URL = "https://github.com/arshubham/papirus-icon-pack";
-        public abstract const string BUG_URL = "https://github.com/arshubham/papirus-icon-pack/issues";
+        public abstract const string MAIN_URL = "https://github.com/arshubham/urutau-icon-pack";
+        public abstract const string BUG_URL = "https://github.com/arshubham/urutau-icon-pack/issues";
         public abstract const string HELP_URL = "shubhamarora.in";
-        public abstract const string TRANSLATE_URL = "https://arshubham.github.io/papirus-icon-pack";
+        public abstract const string TRANSLATE_URL = "https://arshubham.github.io/urutau-icon-pack";
         public abstract const string [] ABOUT_UTHORS = { "Shubham Arora <shubhamarora@protonmail.com>" };
         public abstract const Gtk.License ABOUT_LICENSE_TYPE = Gtk.License.GPL_3_0;
     }

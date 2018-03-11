@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2018 Shubham Arora (https://github.com/arshubham/papirus-icon-pack)
+ * Copyright (c) 2018 Shubham Arora (https://github.com/arshubham/urutau-icon-pack)
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -59,7 +59,7 @@ namespace IconPack.Views {
         void build_headerbar () {
 
             headerbar = new Gtk.HeaderBar ();
-            headerbar.title = _ ("Papirus Icon Pack");
+            headerbar.title = _ ("Urutau Icon Pack");
             headerbar.show_close_button = true;
         }
 
