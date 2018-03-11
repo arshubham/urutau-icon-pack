@@ -22,10 +22,53 @@
 namespace IconPack.Views {
 
     public class IconView : Gtk.Grid {
-        public IconView () {
-            var welcome = new Granite.Widgets.Welcome ("Icon View", "This is the welcome description");
+         private Gtk.FlowBox flow_box;
+         private Gtk.IconTheme icon_theme = new Gtk.IconTheme();
 
-            this.add (welcome);
-            }
+    construct {
+        flow_box = new Gtk.FlowBox ();
+
+        var scrolled = new Gtk.ScrolledWindow (null, null);
+        scrolled.expand = true;
+        scrolled.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+        scrolled.add (flow_box);
+
+        attach (scrolled, 0, 0, 1, 1);
+        attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 1, 1, 1);
+        load_icons.begin ();
+    }
+
+    private async void load_icons () throws ThreadError {
+    SourceFunc callback =  load_icons.callback;
+        flow_box.get_children ().@foreach ((child) => {
+            child.destroy ();
+        });
+
+        var icons = new Gee.ArrayList<string> ();
+
+        icon_theme.set_custom_theme ("urutau-icons");
+        ThreadFunc<bool> run = () => {
+
+        icon_theme.list_icons ("Applications").@foreach ((name) => {
+            icons.add (name);
+        });
+
+        icon_theme.set_custom_theme ("elementary");
+        icon_theme.list_icons ("Applications").@foreach ((name) => {
+            icons.remove (name);
+        });
+        Idle.add((owned) callback);
+
+        return true;
+        };
+        new Thread<bool>("thread-example", run);
+    yield;
+
+        foreach (string name in icons) {
+            var image = new Granite.AsyncImage.from_icon_name_async (name, Gtk.IconSize.DIALOG);
+            flow_box.add (image);
+            flow_box.show_all ();
+        }
+    }
     }
 }
