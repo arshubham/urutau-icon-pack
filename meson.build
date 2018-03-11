@@ -17,6 +17,7 @@ c_args = [
 ]
 
 subdir('src')
+subdir('data')
 
 executable('com.github.arshubham.urutau-icon-pack',
     sources,

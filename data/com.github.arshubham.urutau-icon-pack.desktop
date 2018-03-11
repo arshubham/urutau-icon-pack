@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Urutau Icon Pack
+Comment=A package of icons that transforms the third-party icons with the elementary appearance.
+Icon=com.github.arshubham.urutau-icon-pack
+Exec=com.github.arshubham.urutau-icon-pack
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Utility;Settings;
+Keywords=Icons;Iconpack;DesktopSettings;
