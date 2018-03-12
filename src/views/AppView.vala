@@ -97,7 +97,7 @@ namespace IconPack.Views {
         private void build_views () {
             content = new Gtk.Stack ();
             content.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-            content.transition_duration = 500;
+            content.transition_duration = 300;
             content.hhomogeneous = true;
             content.vhomogeneous = true;
             home_view = new HomeView ();

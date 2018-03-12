@@ -27,6 +27,7 @@ namespace IconPack.Views {
 
     construct {
         flow_box = new Gtk.FlowBox ();
+        flow_box.set_activate_on_single_click (true);
 
         var scrolled = new Gtk.ScrolledWindow (null, null);
         scrolled.expand = true;
@@ -51,6 +52,7 @@ namespace IconPack.Views {
 
         icon_theme.list_icons ("Applications").@foreach ((name) => {
             icons.add (name);
+            stdout.printf ("%s\n", name);
         });
 
         icon_theme.set_custom_theme ("elementary");
