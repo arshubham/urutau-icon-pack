@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/com/github/arshubham/urutau-icon-pack">
+    <file alias="style.css" compressed="true">css/style.css</file>
+    <file alias="com.github.arshubham.urutau-icon-pack.svg">images/icons/128/com.github.arshubham.urutau-icon-pack.svg</file>
+    <file alias="default-icon-1.svg">images/icons/48/defaults/default-icon-1.svg</file>
+    <file alias="default-icon-2.svg">images/icons/48/defaults/default-icon-2.svg</file>
+    <file alias="default-icon-3.svg">images/icons/48/defaults/default-icon-3.svg</file>
+    <file alias="default-icon-4.svg">images/icons/48/defaults/default-icon-4.svg</file>
+    <file alias="default-icon-5.svg">images/icons/48/defaults/default-icon-5.svg</file>
+    <file alias="default-icon-6.svg">images/icons/48/defaults/default-icon-6.svg</file>
+    <file alias="default-icon-7.svg">images/icons/48/defaults/default-icon-7.svg</file>
+    <file alias="default-icon-8.svg">images/icons/48/defaults/default-icon-8.svg</file>
+</gresource>
+</gresources>

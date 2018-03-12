@@ -33,6 +33,7 @@ namespace IconPack.Configs {
         public abstract const string MAIN_URL = "https://github.com/arshubham/urutau-icon-pack";
         public abstract const string BUG_URL = "https://github.com/arshubham/urutau-icon-pack/issues";
         public abstract const string HELP_URL = "shubhamarora.in";
+        public abstract const string URL_CSS = "/com/github/arshubham/urutau-icon-pack/css/style.css";
         public abstract const string TRANSLATE_URL = "https://arshubham.github.io/urutau-icon-pack";
         public abstract const string [] ABOUT_UTHORS = { "Shubham Arora <shubhamarora@protonmail.com>" };
         public abstract const Gtk.License ABOUT_LICENSE_TYPE = Gtk.License.GPL_3_0;

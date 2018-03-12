@@ -46,25 +46,26 @@ namespace IconPack {
             build (app);
         }
 
-        // private void style_provider () {
+         private void style_provider () {
 
-        //     var css_provider = new Gtk.CssProvider ();
-        //     css_provider.load_from_resource (Constants.URL_CSS);
+             var css_provider = new Gtk.CssProvider ();
+             css_provider.load_from_resource (Constants.URL_CSS);
 
-        //     Gtk.StyleContext.add_provider_for_screen (
-        //         Gdk.Screen.get_default (),
-        //         css_provider,
-        //         Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        //     );
-        // }
+             Gtk.StyleContext.add_provider_for_screen (
+                 Gdk.Screen.get_default (),
+                 css_provider,
+                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+             );
+         }
 
         private void build (Gtk.Application app) {
-
             var app_view = new AppView (this);
             new AppController (this, app, app_view);
-
-            this.add (app_view);
-            this.show_all ();
+            get_style_context ().add_class ("rounded");
+            add (app_view);
+            show_all ();
         }
+
+
     }
 }
