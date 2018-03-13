@@ -42,8 +42,8 @@ namespace IconPack.Views {
 
         public AppView (Gtk.ApplicationWindow app) {
             this.app = app;
-            app.set_default_size (1000, 700);
-            app.set_size_request (1000, 700);
+            app.set_default_size (900, 700);
+            app.set_size_request (900, 700);
             app.resizable = false;
             app.deletable = true;
             app.set_titlebar (headerbar);
