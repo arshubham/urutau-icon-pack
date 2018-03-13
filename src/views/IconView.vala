@@ -46,9 +46,9 @@ namespace IconPack.Views {
         });
 
         var icons = new Gee.ArrayList<string> ();
-
+        Gtk.Settings.get_default().gtk_icon_theme_name = "urutau-icons" ;
         icon_theme.set_custom_theme ("urutau-icons");
-        ThreadFunc<bool> run = () => {
+
 
         icon_theme.list_icons ("Applications").@foreach ((name) => {
             icons.add (name);
@@ -59,12 +59,6 @@ namespace IconPack.Views {
         icon_theme.list_icons ("Applications").@foreach ((name) => {
             icons.remove (name);
         });
-        Idle.add((owned) callback);
-
-        return true;
-        };
-        new Thread<bool>("thread-example", run);
-    yield;
 
         foreach (string name in icons) {
             var image = new Granite.AsyncImage.from_icon_name_async (name, Gtk.IconSize.DIALOG);

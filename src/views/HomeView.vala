@@ -93,6 +93,7 @@
         header4.margin_bottom = 12  ;
         header4.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
+
         var header5 = new Gtk.Label ("Places Icons: 50+");
         header5.margin_bottom = 12  ;
         header5.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
