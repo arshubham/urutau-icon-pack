@@ -22,77 +22,84 @@
 namespace IconPack.Views {
 
     public class IconView : Gtk.Grid {
-         private Gtk.FlowBox flow_box;
-         private Gtk.IconTheme icon_theme = new Gtk.IconTheme();
 
-    construct {
-        flow_box = new Gtk.FlowBox ();
-        flow_box.set_activate_on_single_click (true);
+        private Gtk.FlowBox flow_box;
+        private Gtk.IconTheme icon_theme = new Gtk.IconTheme ();
+        private Gtk.ScrolledWindow scrolled;
 
-        var scrolled = new Gtk.ScrolledWindow (null, null);
-        scrolled.expand = true;
-        scrolled.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        scrolled.add (flow_box);
+        construct {
 
-        Gtk.Box box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-        var load_button_applications = new Gtk.Button.with_label ("Load Applications Icons");
-        load_button_applications.clicked.connect (() => load_icons.begin ("Applications"));
-        load_button_applications.margin = 6;
+	        flow_box = new Gtk.FlowBox ();
+            flow_box.set_activate_on_single_click (true);
 
+            scrolled = new Gtk.ScrolledWindow (null, null);
+            scrolled.expand = true;
+            scrolled.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+            scrolled.add (flow_box);
 
-        var load_button_actions = new Gtk.Button.with_label ("Load Actions Icons");
-        load_button_actions.clicked.connect (() => load_icons.begin ("Actions"));
-        load_button_actions.margin = 6;
-
-        var load_button_categories = new Gtk.Button.with_label ("Load Categories Icons");
-        load_button_categories.clicked.connect (() => load_icons.begin ("Categories"));
-        load_button_categories.margin = 6;
-
-        var load_button_devices = new Gtk.Button.with_label ("Load Devices Icons");
-        load_button_devices.clicked.connect (() => load_icons.begin ("Devices"));
-        load_button_devices.margin = 6;
-
-        var load_button_mime = new Gtk.Button.with_label ("Load MimeTypes Icons");
-        load_button_mime.clicked.connect (() => load_icons.begin ("MimeTypes"));
-        load_button_mime.margin = 6;
+            Gtk.Box load_icons_button_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+            var load_applications_icons_button = new Gtk.Button.with_label ("Load Applications Icons");
+            load_applications_icons_button.clicked.connect (() => load_icons.begin ("Applications"));
+            load_applications_icons_button.margin = 6;
 
 
-        box.pack_start (load_button_applications, false, false, 0);
-		box.pack_start (load_button_actions, false, false, 0);
-		box.pack_start (load_button_categories, false, false, 0);
-		box.pack_start (load_button_devices, false, false, 0);
-		box.pack_start (load_button_mime, false, false, 0);
-        attach (scrolled, 0, 0, 1, 1);
-        attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 1, 1, 1);
-        attach (box, 0, 2, 1, 1);
+            var load_actions_icons_button = new Gtk.Button.with_label ("Load Actions Icons");
+            load_actions_icons_button.clicked.connect (() => load_icons.begin ("Actions"));
+            load_actions_icons_button.margin = 6;
 
-    }
+            var load_categories_icons_button = new Gtk.Button.with_label ("Load Categories Icons");
+            load_categories_icons_button.clicked.connect (() => load_icons.begin ("Categories"));
+            load_categories_icons_button.margin = 6;
 
-    private async void load_icons (string type) throws ThreadError {
-    SourceFunc callback =  load_icons.callback;
-        flow_box.get_children ().@foreach ((child) => {
-            child.destroy ();
-        });
+            var load_devices_icons_button = new Gtk.Button.with_label ("Load Devices Icons");
+            load_devices_icons_button.clicked.connect (() => load_icons.begin ("Devices"));
+            load_devices_icons_button.margin = 6;
 
-        var icons = new Gee.ArrayList<string> ();
-        Gtk.Settings.get_default().gtk_icon_theme_name = "urutau-icons" ;
-        icon_theme.set_custom_theme ("urutau-icons");
+            var load_mime_icons_button = new Gtk.Button.with_label ("Load MimeTypes Icons");
+            load_mime_icons_button.clicked.connect (() => load_icons.begin ("MimeTypes"));
+            load_mime_icons_button.margin = 6;
 
 
-        icon_theme.list_icons (type).@foreach ((name) => {
-            icons.add (name);
-        });
-
-        icon_theme.set_custom_theme ("elementary");
-        icon_theme.list_icons (type).@foreach ((name) => {
-            icons.remove (name);
-        });
-
-        foreach (string name in icons) {
-            var image = new Granite.AsyncImage.from_icon_name_async (name, Gtk.IconSize.DIALOG);
-            flow_box.add (image);
-            flow_box.show_all ();
+            load_icons_button_box.pack_start (load_applications_icons_button, false, false, 0);
+            load_icons_button_box.pack_start (load_actions_icons_button, false, false, 0);
+            load_icons_button_box.pack_start (load_categories_icons_button, false, false, 0);
+            load_icons_button_box.pack_start (load_devices_icons_button, false, false, 0);
+            load_icons_button_box.pack_start (load_mime_icons_button, false, false, 0);
+            attach (scrolled, 0, 0, 1, 1);
+            attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 1, 1, 1);
+            attach (load_icons_button_box, 0, 2, 1, 1);
         }
-    }
+
+        private async void load_icons (string type) {
+            flow_box.get_children ().@foreach ((child) => {
+                child.destroy ();
+            });
+
+            Gtk.Settings.get_default().gtk_icon_theme_name = "urutau-icon-pack-reorg";
+
+            load_icons_util (type);
+
+        }
+
+        private async void load_icons_util (string type) {
+
+            Gee.ArrayList<string> icons = new Gee.ArrayList<string> ();
+            icon_theme.set_custom_theme ("urutau-icon-pack-reorg");
+
+            icon_theme.list_icons (type).@foreach ((name) => {
+                icons.add (name);
+            });
+
+            icon_theme.set_custom_theme ("elementary");
+            icon_theme.list_icons (type).@foreach ((name) => {
+                icons.remove (name);
+            });
+
+            foreach (string name in icons) {
+                var image = new Granite.AsyncImage.from_icon_name_async (name, Gtk.IconSize.DIALOG);
+                flow_box.add (image);
+                flow_box.show_all ();
+            }
+        }
     }
 }
