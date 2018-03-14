@@ -69,7 +69,7 @@ namespace IconPack.Views {
             view_mode.margin_right = 20;
             view_mode.append_text (_("Home"));
             view_mode.append_text (_("Icons"));
-            view_mode.append_text (_("Icon Request"));
+            //view_mode.append_text (_("Icon Request"));
             view_mode.append_text (_("FAQ"));
             view_mode.selected = 0;
 
@@ -79,10 +79,10 @@ namespace IconPack.Views {
                     case 1 :
                         show_icons ();
                         break;
+                    //case 2 :
+                        //show_icon_request ();
+                        //break;
                     case 2 :
-                        show_icon_request ();
-                        break;
-                    case 3 :
                         show_faq ();
                         break;
                     default :
@@ -106,7 +106,7 @@ namespace IconPack.Views {
             faq_view = new FaqView ();
             content.add_named (home_view, "home");
             content.add_named (icon_view, "icons");
-            content.add_named (icon_request_view, "request");
+            //content.add_named (icon_request_view, "request");
             content.add_named (faq_view, "faq");
             content.visible_child_name = "home";
         }
@@ -122,11 +122,11 @@ namespace IconPack.Views {
             content.visible_child_name = "icons";
 
         }
-        private void show_icon_request () {
+        // private void show_icon_request () {
 
-            content.visible_child_name = "request";
+        //     content.visible_child_name = "request";
 
-        }
+        // }
         private void show_faq () {
 
             content.visible_child_name = "faq";
