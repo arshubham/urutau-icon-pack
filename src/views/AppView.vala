@@ -30,7 +30,7 @@ namespace IconPack.Views {
         private Granite.Widgets.ModeButton view_mode;
         private IconPack.Views.HomeView home_view;
         private IconPack.Views.IconView icon_view;
-        private IconPack.Views.IconRequestView icon_request_view;
+        //private IconPack.Views.IconRequestView icon_request_view;
         private IconPack.Views.FaqView faq_view;
         private Gtk.Stack content;
 
