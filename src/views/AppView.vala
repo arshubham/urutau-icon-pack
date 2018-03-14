@@ -102,7 +102,7 @@ namespace IconPack.Views {
             content.vhomogeneous = true;
             home_view = new HomeView ();
             icon_view = new IconView ();
-            icon_request_view = new IconRequestView ();
+            //icon_request_view = new IconRequestView ();
             faq_view = new FaqView ();
             content.add_named (home_view, "home");
             content.add_named (icon_view, "icons");
