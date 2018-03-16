@@ -77,7 +77,7 @@ namespace IconPack.Views {
 
             Gtk.Settings.get_default().gtk_icon_theme_name = "urutau-icon-pack-reorg";
 
-            load_icons_util (type);
+            load_icons_util.begin (type);
 
         }
 
